@@ -21,7 +21,7 @@ The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving 
   - **fcast_vars**: vector of indices identifying the endogenous variables whose one-period-ahead forecasts should be added to the model as additional endogenous variables.  This will be done automatically for variables identified in **senti_endovars**, even if they are not specified here.
   - **fcast_hors**: matrix identifying variables whose many-periods-ahead forecasts should be added to the model as additional endogenous variables.  If there are $n$ such forecasts to be added, **fcast_hors** is specified as an $n\times 3$ matrix.  In each row, the first entry indexes the endogenous variable to be forecast, the second entry indexes the forecast horizon (an integer number of periods), and the third entry is set to $1$ if the forecast is cumulative and $0$ otherwise.
 
-- **BEET_irfs.m** calculates and plots impulse response functions to exogenous shocks
+- **BEET_irfs.m** calculates and plots impulse response functions to exogenous shocks.  The inputs are:
   - **irf_T**: scalar setting the IRF horizon to calculate  (default: $12$)
   - **BEET_irf_plot**: scalar which triggers plots of the IRFs, if set to $1$ (default: $1$)
   - **BEET_irf_vars**: vector identifying which exogenous states to calculate IRFs for (default: all)
@@ -33,8 +33,7 @@ The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving 
   - **ytitles**: cell array containing labels (as strings) of the $y$ endogenous variables (optional)
   - **ztitles**: cell array containing labels (as strings) of the $z$ exogenous variables (optional)
 
-
-- **BEET_sim.m** simulates the model
+- **BEET_sim.m** simulates a model solved with **BEET_solve.m**
 
 - **BEET_foreterm.m** calculates the term structure of forecasts for a model solved with **BEET_solve.m**
 
