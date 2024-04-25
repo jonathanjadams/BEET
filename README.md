@@ -1,1 +1,30 @@
 # BEET
+
+<!-- Here: describe in General -->
+
+ BEET is a toolkit for solving stochastic dynamic macroeconomic models with behavioral expectations in MATLAB.  BEET itself is not a model-solver; for that task, it uses existing methods.  Rather, BEET transforms a behavioral expectations model into one that can be solved using tools designed for rational expectations.
+
+ # Dependencies
+ 
+ You will need either the Uhlig Toolkit or Chris Sims' GENSYS.  You will also need MATLAB.  (MATLAB alternatives may be acceptable, but there are no guarantees that the toolkit will work.  Of, that is true for MATLAB as well...)
+
+ # File Descriptions
+
+- BEET_solve.m solves the policy funciton for a behavioral model
+
+- BEET_irfs.m calculates and plots impulse response functions to exogenous shocks
+
+- BEET_sim.m simulates the model
+
+- BEET_foreterm: this program calculates the term structure of forecasts for a model solved with BEET_solve.m
+
+ # Folder Descriptions
+ 
+ - /latex contains the documentation for the BEET toolkit, and the latex files used to generate it. *START HERE*
+
+- /uhlig toolkit contains Harald Uhlig's solution toolkit for rational expectations models
+
+- /gensys contains Chris Sim's solution toolkit for rational expectations models
+
+
+ 
