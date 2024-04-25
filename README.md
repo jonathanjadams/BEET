@@ -26,12 +26,7 @@ The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving 
   - **BEET_irf_plot**: scalar which triggers plots of the IRFs, if set to $1$ (default: $1$)
   - **BEET_irf_vars**: vector identifying which exogenous states to calculate IRFs for (default: all)
   - **plot_z_irfs**: scalar which triggers inclusion of IRFs to exogenous states when IRFs are plotted, if set to $1$ (default: $1$)
-  - **irf_T**: scalar setting the IRF horizon to calculate
-  - **irf_T**: scalar setting the IRF horizon to calculate
-  - **irf_T**: scalar setting the IRF horizon to calculate
-  - **xtitles**: cell array containing labels (as strings) of the $x$ endogenous variables (optional)
-  - **ytitles**: cell array containing labels (as strings) of the $y$ endogenous variables (optional)
-  - **ztitles**: cell array containing labels (as strings) of the $z$ exogenous variables (optional)
+  - **xtitles**, **ytitles**, **ztitles**: cell arrays containing labels (as strings) of the $x$, $y$, and/or $z$ variables (optional)
 
 - **BEET_sim.m** simulates a model solved with **BEET_solve.m**
 
