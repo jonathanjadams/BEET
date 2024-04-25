@@ -12,7 +12,7 @@ The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving 
 
 - **BEET documentation.pdf** contains the conceptual documentation for the BEET toolkit *START HERE*
 
-- **BEET_solve.m** solves the policy function for a behavioral model.  The inputs are:
+- **BEET_solve.m** solves the policy function for a behavioral model, using the **Uhlig Toolkit**.  The inputs are:
   -  **AA_fire**, **BB_fire**,... **NN_fire** (_Required_): matrices which encode the rational expectations model in "Uhlig form" (corresponding to matrices $A,B,...N$ respectively in Uhlig's notation)
   - **BE_phivec**: vector of coefficients $[\phi_0,\phi_1,...,\phi_J]$ that encode a deterministic behaiovral expectations operator $\mathbb{E}^k$ in terms of current and past rational forecasts:
     $$\mathbb{E}^k_t[x_{t+1}] = \sum_{j=0}^{J}\phi_j \mathbb{E}^k_{t-j}[x_{t+1}]$$
