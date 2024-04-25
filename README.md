@@ -18,7 +18,7 @@ The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving 
 
 - BEET_sim.m simulates the model
 
-- BEET_foreterm: this program calculates the term structure of forecasts for a model solved with BEET_solve.m
+- BEET_foreterm.m: this program calculates the term structure of forecasts for a model solved with BEET_solve.m
 
 
 
