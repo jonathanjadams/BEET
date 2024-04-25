@@ -10,6 +10,8 @@
 
  # File Descriptions
 
+- BEET documentation.pdf contains the documentation for the BEET toolkit *START HERE*
+
 - BEET_solve.m solves the policy funciton for a behavioral model
 
 - BEET_irfs.m calculates and plots impulse response functions to exogenous shocks
@@ -18,13 +20,6 @@
 
 - BEET_foreterm: this program calculates the term structure of forecasts for a model solved with BEET_solve.m
 
- # Folder Descriptions
- 
- - /latex contains the documentation for the BEET toolkit, and the latex files used to generate it. *START HERE*
-
-- /uhlig toolkit contains Harald Uhlig's solution toolkit for rational expectations models
-
-- /gensys contains Chris Sim's solution toolkit for rational expectations models
 
 
  
