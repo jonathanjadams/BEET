@@ -10,15 +10,15 @@ The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving 
 
  # File Descriptions
 
-- BEET documentation.pdf contains the documentation for the BEET toolkit *START HERE*
+- **BEET documentation.pdf** contains the conceptual documentation for the BEET toolkit *START HERE*
 
-- BEET_solve.m solves the policy function for a behavioral model
+- **BEET_solve.m** solves the policy function for a behavioral model
 
-- BEET_irfs.m calculates and plots impulse response functions to exogenous shocks
+- **BEET_irfs.m** calculates and plots impulse response functions to exogenous shocks
 
-- BEET_sim.m simulates the model
+- **BEET_sim.m** simulates the model
 
-- BEET_foreterm.m: this program calculates the term structure of forecasts for a model solved with BEET_solve.m
+- **BEET_foreterm.m** calculates the term structure of forecasts for a model solved with **BEET_solve.m**
 
 
 
