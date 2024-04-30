@@ -6,7 +6,7 @@ The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving 
 
  # Dependencies
  
- You will need either the Uhlig Toolkit or [Chris Sims' GENSYS](http://sims.princeton.edu/yftp/gensys/ "GENSYS").  You will also need MATLAB.  (MATLAB alternatives may be acceptable, but there are no guarantees that the toolkit will work.  Of course, that is true for MATLAB as well...).  Main funcitonality was confirmed on MATLAB R2019a.
+ You will need either the [Uhlig Toolkit](https://home.uchicago.edu/~huhlig/js/Toolkit_4.3.zip "Uhlig") or [Chris Sims' GENSYS](http://sims.princeton.edu/yftp/gensys/ "GENSYS").  You will also need MATLAB.  (MATLAB alternatives may be acceptable, but there are no guarantees that the toolkit will work.  Of course, that is true for MATLAB as well...).  Main funcitonality was confirmed on MATLAB R2019a.
 
  # File Descriptions
 
