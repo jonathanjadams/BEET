@@ -8,7 +8,7 @@
 % BEET_solve: this program solves a model with behavioral expectations or
 % sentiment shocks
 
-% Version 0.2 (2024/4/30)
+% Version 0.21 (2024/6/03)
 
 % dependencies: Uhlig Toolkit subroutines (add to path), GENSYS functions (optional, add to path), BEET_foreterm (optional)
 
@@ -34,22 +34,25 @@ if ~exist('CC_fire','var')
 end
 n_con = size(CC_fire,1); %number of contemporaneous equations in base model
 if ~exist('BE_phivec','var') %if no behavioral expectation is specified, set expanded L,M,N matrices to be FIRE matrices
-     DD_firebig = DD_fire;
+    DD_firebig = DD_fire;
     LL_firebig = LL_fire;
     MM_firebig = MM_fire;
     NN_firebig = NN_fire;
-else 
+else
     %but if there are behavioral expectations, we will need to redefine the
-    %state vector to include lags of states:
-    NN_firebig = repmat(0*NN_fire,length(BE_phivec));
+    %state vector to include lags of states (see documentation Appendix B)
+    NN_firebig = repmat(0*NN_fire,length(BE_phivec)); %length(BE_phivec)+1 = J in the documentation
     NN_firebig(1:size(NN_fire,1),1:size(NN_fire,2))=NN_fire;
-    NN_firebig(1+size(NN_fire,1):end,1:size(NN_fire,2)*(length(BE_phivec)-1)) = eye((length(BE_phivec)-1)*size(NN_fire,1));
+    NN_firebig(1+size(NN_fire,1)*2:end,1+size(NN_fire,1):end-size(NN_fire,1)) = eye((length(BE_phivec)-2)*size(NN_fire,1));
     DD_firebig = [DD_fire, repmat(0*DD_fire,1,(length(BE_phivec)-1))];
     LL_firebig = [LL_fire, repmat(0*LL_fire,1,(length(BE_phivec)-1))];
     MM_firebig = [MM_fire, repmat(0*MM_fire,1,(length(BE_phivec)-1))];
     %And then define this misperceived law of motion:
-    NN_misp = NN_firebig;
-    NN_misp(1:size(NN_fire,1),:) = kron(BE_phivec,NN_fire);
+    NN_misp = 0*NN_firebig;
+    BE_psivec = cumsum(BE_phivec(1:end-1)); psiJ = sum(BE_phivec);
+    NN_misp(1:size(NN_fire,1),1:size(NN_fire,2))=psiJ*NN_fire;
+    NN_misp(1:size(NN_fire,1),1+size(NN_fire,2):end)=kron((BE_psivec-psiJ),NN_fire);
+    NN_misp(1+size(NN_fire,1)*2:end,1+size(NN_fire,1):end-size(NN_fire,1)) = kron(diag( BE_psivec(1:end-1)),NN_fire); %check the RHS
 end
 n_exo = size(NN_firebig,1); %number of exogenous states in the (modified) base model
 
@@ -214,6 +217,8 @@ if BEET_method == 1  ||  BEET_method == 2  %calls GENSYS
     BE_pi = [zeros(size(HH)); eye(size(HH))];
 
     [G1,C,impact,fmat,fwt,ywt,gev,eu,loose] = gensys(BE_g0,BE_g1,BE_c,BE_psi,BE_pi);
+    %in gensys, a = "Lambda", b = "Omega", and gev=[diag(a) diag(b)]
+    %so gev(:,2)./gev(:,1) are the "generalized eigenvalues" phi in my terms
     
     %Map to Uhlig parameters:
     PP_gensys = G1;

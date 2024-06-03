@@ -7,7 +7,7 @@
 
 % BEET_irfs: this program calculates the Impulse Response Functions for a model solved with BEET_solve.m
 
-% Version 0.1 (2023/10/16)
+% Version 0.21 (2024/6/03)
 
 % inputs: 
 % - Solution output from BEET_solve.m
@@ -90,6 +90,20 @@ end
 if ~exist('WWWW','var')
     WWWW = eye(n_exo+n_senti); %WW is the matrix mapping str. shocks to each element in z
 end
+if exist('BE_phivec','var')
+    if length(BE_phivec)>1
+        if WWWW ~= eye(size(WWWW,1))
+            disp('If you WANTED a non-identity WWWW, this is NOT yet compatibile with BE_phivec')
+        end
+        %if you had to add additional states for the BE, then:
+        %set impact matrix to only land on original state vector, +
+        %contemporaneous shock
+        WWWW = zeros(n_exo+n_senti);
+        WWWW(1:size(NN_fire,1),1:size(NN_fire,2)) = eye(size(NN_fire,1));
+        WWWW(1+size(NN_fire,1):2*size(NN_fire,1),1:size(NN_fire,2)) = eye(size(NN_fire,1));
+    end
+end
+
 
 %first dimension: outcome variables
 %second dimension: response horizon
@@ -123,7 +137,9 @@ end
 
 %combine x and y and fa:
 xy_irf = [y_irf; x_irf; fa_irf];
-irf_titles = xytitles;
+if exist('xytitles','var')
+    irf_titles = xytitles;
+end
 if plot_z_irfs == 1
     %We are only going to plot IRFs for the original states
     %i.e. if we had to add lags of states to implement behavioral expectations
@@ -132,7 +148,9 @@ if plot_z_irfs == 1
     %add to original irf array:
     xy_irf = [xy_irf; z_irf(plotzs,:,:)];
     %if also plotting z irfs, need to add those to titles
-    irf_titles(end+1:end+length(zstitles)) = zstitles; %should be zstitles; if something breaks consider cases where this was only ztitles;
+    if exist('zstitles','var')
+        irf_titles(end+1:end+length(zstitles)) = zstitles; %should be zstitles; if something breaks consider cases where this was only ztitles;
+    end
 end
 
 
