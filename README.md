@@ -38,11 +38,9 @@ The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving 
 
 # To Do
 
-- Resolve GENSYS-Uhlig inconsistenies
-
 - Add functionality for non diagonal BEs with arbitrary coefficients on lags
 
 - Sunspots
 
-
+- Document how Uhlig vs GENSYS treat state variables under BE
  
