@@ -35,6 +35,10 @@ The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving 
 
 - **BEET_foreterm.m** calculates the term structure of forecasts for a model solved with **BEET_solve.m**
 
+- **BEET_sunspots.m** calculates the sunspot equilibria of a model solved via the GENSYS method with **BEET_solve.m**
+
+- **BEET_eigenseries.m** function the calculates eigenseries of subrational behavioral expectations; used in **BEET_sunspots.m**
+
 
 # To Do
 
