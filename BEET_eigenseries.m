@@ -13,8 +13,6 @@
 % inputs: BE_phivec, vector of phi's determining the behavioral expectation
 
 
-%lambda = .9; %eigenvalue
-
 function [rhobar,eigenseries_ma]=BEET_eigenseries(lambda,BE_phivec)
 
 rhobar = lambda/sum(BE_phivec);
