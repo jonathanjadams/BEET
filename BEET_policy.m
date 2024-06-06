@@ -5,8 +5,9 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% BEET_eigenseries: this program finds the eigenseries of a subrational
-% behavioral expectation operator associated with an eigenvalue
+% BEET_policy: this program finds the optimal policy rule for responding to
+% belief distortions, as documented in Adams 2024 "Optimal Policy Without
+% Rational Expectations: A Sufficient Statistic Solution"
 
 % Version 0.21 (2024/6/3)
 
