@@ -4,7 +4,7 @@
 
 The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving stochastic dynamic macroeconomic models with behavioral expectations in MATLAB.  BEET itself is not a model-solver; for that task, it uses existing methods.  Rather, BEET is a wrapper that transforms a behavioral expectations model into one that can be solved using tools designed for rational expectations.
 
-*This toolkit is still extremely early!  USE AT YOUR OWN RISK!! (and please reach out to me when things go wrong!)*
+*This toolkit is still in development: USE AT YOUR OWN RISK! (and please reach out to me when things go wrong!)*
 
  # Dependencies
  
