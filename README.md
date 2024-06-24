@@ -17,7 +17,7 @@ The Behavioral Expectations Equilibrium Toolkit (BEET) is a toolkit for solving 
 - **BEET_solve.m** solves the policy function for a behavioral model, using the **Uhlig Toolkit** or **GENSYS**.  The inputs are:
   - **AA_fire**, **BB_fire**,... **NN_fire** (*Required*): matrices which encode the rational expectations model in "Uhlig form" (corresponding to matrices $A,B,...N$ respectively in Uhlig's notation)
   - **BEET_method**: scalar identifying which method should be used to solve the model.  $0$ indicates Uhlig, $1$ indicates GENSYS, $2$ indicates both (default: $0$)
-  - **BE_phivec**: vector of coefficients $[\phi_0,\phi_1,...,\phi_J]$ that encode a subrational behavioral expectations operator $E^k$ in terms of current and past rational forecasts (default $\pho_0=1$):
+  - **BE_phivec**: vector of coefficients $[\phi_0,\phi_1,...,\phi_J]$ that encode a subrational behavioral expectations operator $E^k$ in terms of current and past rational forecasts (default $\phi_0=1$):
     $$E^k_t[x_{t+1}] = \sum_{j=0}^{J}\phi_j E_{t-j} [x_{t+1}]$$
   - **senti_exovars**: vector of indices identifying any exogenous variables about which agents have stochastic belief distortions or "sentiments"
   - **senti_endovars**: vector of indices identifying any endogenous variables about which agents have stochastic belief distortions or "sentiments"
